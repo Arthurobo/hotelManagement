@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Profile Detail
+{% endblock title %}
+
+
+{% block content %}
+<v-container>
+<div class="ui grid">
+    <div class="row">
+        <div class="four wide column">
+            {{profile}}
+            {{profile.bio}}
+            {{profile.updated}}
+            <hr>
+            {% if follow %}
+            <form action="{% url 'profiles:follow-unfollow-view' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="profile_pk" value={{object.pk}}>
+                <button type="submit" class="ui negative button" style="background-color: red;">Unfollow</button>
+            </form>
+            {% else %}
+                <form action="{% url 'profiles:follow-unfollow-view' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="profile_pk" value="{{object.pk}}">
+                    <button type="submit" class="ui green ok massive button" style="background-color: blue;">Follow</button>
+                </form>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+</v-container>
+{% endblock content %}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <style>
+        .menu-link {
+            color: white;
+        }
+
+        /* Home Left Component */
+        .first-column {
+            background-color: #f7f7f7;
+            position: relative;
+        }
+
+        .second-column {
+            background-color: #fff;
+        }
+
+        .third-column {
+            background-color: #f7f7f7;
+        }
+
+        .fourth-column {
+            background-color: yellow;
+        }
+
+        .our-heritage {
+            padding-left: 20px;
+        }
+
+        .row-space {
+            margin-bottom: 200px;
+        }
+
+
+
+        /* Home Center Component */
+
+        a {}
+
+        .first-column {
+            background-color: #f7f7f7;
+            position: relative;
+        }
+
+        .second-column {
+            background-color: #fff;
+        }
+
+        .third-column {
+            background-color: #f7f7f7;
+        }
+
+        .fourth-column {
+            background-color: yellow;
+        }
+
+        .post-content {
+            padding: 0px 100px;
+            text-align: left;
+        }
+
+
+        /* HomeRight Component */
+
+        .first-column {
+            background-color: #f7f7f7;
+            position: relative;
+        }
+
+        .second-column {
+            background-color: #fff;
+        }
+
+        .third-column {
+            background-color: #f7f7f7;
+        }
+
+        .fourth-column {
+            background-color: yellow;
+        }
+
+        .flexing {}
+
+        .row-space {
+            margin-bottom: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-main>
+
+                <v-app id="inspire">
+                    {% include 'TopNavigation.html' %}
+                    <div>
+                        {% block content %}
+                        {% endblock content %}
+                    </div>
+                </v-app>
+                    {% include 'Footer.html' %}
+            </v-main>
+        </v-app>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+        })
+    </script>
+</body>
+
+</html>

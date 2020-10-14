@@ -1,0 +1,44 @@
+
+<v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" style="background-color: rgb(29, 29, 41);" app color="rgb(29, 29, 41) darken-3 white--text" dark>
+  <!-- <v-toolbar-side-icon class="white--text"></v-toolbar-side-icon> -->
+  
+  <v-toolbar-title style="width: 400px; text-decoration: none;" class="ml-0 pl-0 ">
+    <a href="{% url 'pages:home-view' %}" class="white-link" style="text-decoration: none;" >
+    <span class="menu-link">Luntil  </span> 
+    </a>
+  </v-toolbar-title>
+  <v-spacer></v-spacer>
+  <v-spacer></v-spacer>
+  <v-spacer></v-spacer>
+  
+  {% if request.user.is_authenticated %}
+
+  <v-spacer></v-spacer>
+  <a href="{% url 'pages:home-view' %}" style="color: white; text-decoration: none;">HOME</a>
+  <v-spacer></v-spacer>
+  <a href="{% url 'pages:about-view' %}" style="color: white; text-decoration: none;">ABOUT</a>
+  <v-spacer></v-spacer>
+  <a href="{% url 'pages:contact-view' %}" style="color: white; text-decoration: none;">CONTACT US</a>
+
+  <v-spacer></v-spacer>
+    <a href="">
+    <v-avatar class="profile-icon">
+      <img src="{{ user.profile.profile_image.url }}" alt="John">
+    </v-avatar>
+  </a>
+    {% else %}
+  <a href="{% url 'pages:home-view' %}" style="color: white; text-decoration: none;">HOME</a>
+  <v-spacer></v-spacer>
+  <a href="{% url 'pages:about-view' %}" style="color: white; text-decoration: none;">ABOUT</a>
+  <v-spacer></v-spacer>
+  <a href="{% url 'pages:contact-view' %}" style="color: white; text-decoration: none;">CONTACT US</a>
+  <v-spacer></v-spacer>
+  <a href="/accounts/login/"><v-btn style="background-color: white; color: rgb(29, 29, 41); 
+                                            border-radius: 10px ;font-weight: bold;">LOGIN</v-btn>
+  </a>
+  <v-spacer></v-spacer>
+  <a href="/accounts/signup/"><v-btn style="background-color: white; color: rgb(29, 29, 41); 
+                                            border-radius: 10px ;font-weight: bold;">REGISTER</v-btn>
+  </a>
+  {% endif %}
+</v-app-bar>

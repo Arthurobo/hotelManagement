@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .image-background {
+        opacity: 0.5;
+    }
+</style>
+
+<div>
+    <div class="image-background">
+        <v-row class="image-background" style="background-image: url({% static 'images/housefinder.jpg' %});">
+            <v-col cols='6'></v-col>
+            <v-col cols='6'>
+                <v-row>
+                    <v-col cols="2"></v-col>
+                    <v-col cols="8">
+                        <v-card class="elevation-10">
+                            <v-toolbar color="rgb(29, 29, 41)" dark flat>
+                                <v-toolbar-title class="center-login">Book A Room</v-toolbar-title>
+                            </v-toolbar>
+                            <v-card-text>
+                                <h1 v-if="incorrectAuth">Incorrect username or password entered - Try again</h1>
+                                <v-form>
+                                    <v-text-field label="Check-in" prepend-icon="mdi-account" type="text">
+                                    </v-text-field>
+                                    <v-text-field id="check-out" label="Check-out" prepend-icon="mdi-lock"
+                                        type="password">
+                                    </v-text-field>
+                                    <v-text-field label="Room Type" prepend-icon="mdi-account" type="text">
+                                    </v-text-field>
+                                    <v-text-field id="guests" label="Number of Guests" prepend-icon="mdi-lock"
+                                        type="text"></v-text-field>
+                                    <v-text-field label="Number of Rooms" prepend-icon="mdi-account" type="text">
+                                    </v-text-field>
+                                    <v-btn color="rgb(29, 29, 41)" type="submit" style="align-content: center; 
+                                     color: white; border-radius: 10px;">Book</v-btn>
+                                </v-form>
+                            </v-card-text>
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
+                            </v-card-actions>
+                        </v-card>
+                    </v-col>
+                    <v-col cols="2"></v-col>
+                </v-row>
+
+            </v-col>
+        </v-row>
+    </div>
+
+
+    <v-row style="background-color: white; margin-top: 30px; 
+                    padding-top: 20px; padding-bottom: 20px;">
+        <v-col cols='6'>
+            <v-container>
+                <div style="text-align: center;">
+                    <h1>Intercontinental Toronto Hotel</h1>
+                    <div>
+                        <p style="font-size: 16px; padding: 10px;">Sona.com is a leading online accommodation site.
+                            We’re passionate about
+                            travel. Every day, we inspire and reach millions of travelers across 90
+                            local websites in 41 languages.
+                            So when it comes to booking the perfect hotel, vacation rental,
+                            resort, apartment, guest house, or tree house, we’ve got you covered.
+                        </p>
+                    </div>
+                    <v-btn style="padding: 20px; color: white; border-radius: 10px; 
+                    background-color: rgb(29, 29, 41)">More About Us</v-btn>
+                </div>
+            </v-container>
+        </v-col>
+        <v-col cols='6'>
+            <v-container>
+                <v-row>
+                    <v-col cols="6">
+                        <v-img src="{% static 'images/housefinder.jpg' %}">
+                    </v-col>
+                    <v-col cols="6">
+                        <v-img src="{% static 'images/housefinder.jpg' %}">
+                    </v-col>
+                </v-row>
+            </v-container>
+        </v-col>
+    </v-row>
+
+
+    <v-row style="background-color: rgb(29, 29, 41); margin-top: 30px;">
+
+            <v-container>
+                    <div style="text-align: center; color: white;">
+                        <h1>Rooms</h1>
+                    </div>
+                <v-row>
+                    <v-col cols="3">
+                        <v-img src="{% static 'images/housefinder.jpg' %}"></v-img>
+                            <p style="text-align: center; color: white;">Lorem ipsum dolor sit amet 
+                                consectetur adipisicing elit. Impedit, esse?
+                            </p>
+                    </v-col>
+                    <v-col cols="3">
+                        <v-img src="{% static 'images/housefinder.jpg' %}"></v-img>
+                            <p style="text-align: center; color: white;">Lorem ipsum dolor sit amet 
+                                consectetur adipisicing elit. Impedit, esse?
+                            </p>
+                    </v-col>
+                    <v-col cols="3">
+                        <v-img src="{% static 'images/housefinder.jpg' %}"></v-img>
+                            <p style="text-align: center; color: white;">Lorem ipsum dolor sit amet 
+                                consectetur adipisicing elit. Impedit, esse?
+                            </p>
+                    </v-col>
+                    <v-col cols="3">
+                        <v-img src="{% static 'images/housefinder.jpg' %}"></v-img>
+                            <p style="text-align: center; color: white;">Lorem ipsum dolor sit amet 
+                                consectetur adipisicing elit. Impedit, esse?
+                            </p>
+                    </v-col>
+                </v-row>
+            </v-container>
+    </v-row>
+
+
+
+    <v-row style="background-color: white; margin-top: 60px; margin-bottom: 60px;">
+        <v-col cols='2'></v-col>
+        <v-col cols='8'>
+            <v-container>
+                <div style="text-align: center;">
+                    <h1>What Our Customers Say</h1>
+                    <div>
+                        <p style="font-size: 16px; padding: 10px;">Sona.com is a leading online accommodation site.
+                            We’re passionate about
+                            travel. Every day, we inspire and reach millions of travelers across 90
+                            local websites in 41 languages.
+                            So when it comes to booking the perfect hotel, vacation rental,
+                            resort, apartment, guest house, or tree house, we’ve got you covered.
+                        </p>
+                    </div>
+                    <v-btn style="border-radius: 10px; background-color: rgb(29, 29, 41); color: white;">More About Us</v-btn>
+                </div>
+            </v-container>
+        </v-col>
+        <v-col cols='2'></v-col>
+    </v-row>
+
+
+    <v-row style="background-color: #f2f2f2; margin-top: 30px; 
+    padding-top: 20px; padding-bottom: 20px;">
+
+        <v-container>
+                <div style="text-align: center;">
+                    <h1>Our Blog And Events</h1>
+                </div>
+            <v-row>
+                <v-col cols="3">
+                    <v-img src="{% static 'images/housefinder.jpg' %}"></v-img>
+                        <p style="text-align: center;">Lorem ipsum dolor sit amet 
+                            consectetur adipisicing elit. Impedit, esse?
+                        </p>
+                </v-col>
+                <v-col cols="3">
+                    <v-img src="{% static 'images/housefinder.jpg' %}"></v-img>
+                        <p style="text-align: center;">Lorem ipsum dolor sit amet 
+                            consectetur adipisicing elit. Impedit, esse?
+                        </p>
+                </v-col>
+                <v-col cols="3">
+                    <v-img src="{% static 'images/housefinder.jpg' %}"></v-img>
+                        <p style="text-align: center;">Lorem ipsum dolor sit amet 
+                            consectetur adipisicing elit. Impedit, esse?
+                        </p>
+                </v-col>
+                <v-col cols="3">
+                    <v-img src="{% static 'images/housefinder.jpg' %}"></v-img>
+                        <p style="text-align: center;">Lorem ipsum dolor sit amet 
+                            consectetur adipisicing elit. Impedit, esse?
+                        </p>
+                </v-col>
+            </v-row>
+        </v-container>
+</v-row>
+
+
+<v-row style="background-color: white; margin-top: 30px;">
+    <v-col cols='3'></v-col>
+    <v-col cols='6'>
+        <v-container style="background-color: #f2f2f2;">
+            <div style="text-align: center;">
+                <h1>Get In Touch Today</h1>
+                <v-form>
+                    <v-text-field id="check-out" label="Name" prepend-icon="mdi-lock"
+                        type="text">
+                    </v-text-field>
+                    <v-text-field label="Email" prepend-icon="mdi-account" type="email">
+                    </v-text-field>
+                    <v-text-field label="Message" prepend-icon="mdi-account" type="text">
+                    </v-text-field>
+                    <v-btn color="primary" type="submit" style="align-content: center;">Send</v-btn>
+                </v-form>
+            </div>
+        </v-container>
+    </v-col>
+    <v-col cols='3'></v-col>
+</v-row>
+
+</div>
+
+{% endblock content %}

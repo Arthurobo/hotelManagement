@@ -1,0 +1,65 @@
+
+<v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="blue darken-3 white--text" dark>
+    <!-- <v-toolbar-side-icon class="white--text"></v-toolbar-side-icon> -->
+    
+    <v-toolbar-title style="width: 400px" class="ml-0 pl-0 ">
+      <a href="{% url 'navigations:home-page' %}" class="white-link">
+      <span class="menu-link">Luntil  </span> 
+      </a>
+    </v-toolbar-title>
+
+    <v-text-field flat solo-inverted hide-details 
+                  prepend-inner-icon="mdi-magnify" 
+                   
+                  class="hidden-sm-and-down">
+    </v-text-field>
+    <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
+    
+    {% if request.user.is_authenticated %}
+
+    <v-spacer></v-spacer>
+    <a href="{% url 'pages:page-list' %}">
+    <v-btn icon class="hidden-sm-and-down btn-today">
+      <v-icon>mdi-map-marker</v-icon>
+    </v-btn>
+      </a>
+    <v-spacer></v-spacer>
+      <router-link to="/notifications">
+    <v-btn icon class="hidden-sm-and-down btn-today">
+      <v-icon>mdi-bell</v-icon>
+    </v-btn>
+      </router-link>
+    <v-spacer></v-spacer>
+      <router-link to="/messages">
+    <v-btn icon class="hidden-sm-and-down btn-today">
+      <v-icon>mdi-message-text</v-icon>
+    </v-btn>
+      </router-link>
+    <v-spacer></v-spacer>
+        <!-- <a :href="'/users/profile'"> -->
+      <router-link to="/profile">
+      <v-avatar class="profile-icon">
+        <img src="{{ user.profile.profile_image.url }}" alt="John">
+      </v-avatar>
+      </router-link>
+    <v-btn icon color="white" class="hidden-sm-and-down">
+      <v-icon>mdi-menu-down</v-icon>
+    </v-btn> 
+    <a href="/accounts/logout" class="white-link">
+    <span class="menu-link">Logout</span> 
+    </a>
+    {% else %}
+    <v-spacer></v-spacer>
+    <a href="/accounts/login" class="white-link">
+    <span class="menu-link">Login
+  </span> 
+    </a>
+    <v-spacer></v-spacer>
+    <a href="/accounts/signup/" class="white-link">
+    <span class="menu-link">Register
+  </span> 
+    </router-link>
+    {% endif %}
+  </v-app-bar>
